@@ -8,14 +8,14 @@
     </head>
     <body>
         <h1>TodoList</h1>
-        <form action="" method="get">
-            <label for="todo-add">Add todo list item:</label>
+        <form action="" method="get" class="form">
+            <label for="todo-add">Add todo list item (or click item to delete):</label>
             <input type="text" name="todo-add" id="todo-add" />
-            <input type="submit" value="Add" />
+            <input type="submit" class="submit-btn" value="Add" />
         </form>
 
-        <div class="form-list">
-            <ul></ul>
+        <div class="todo-list-container">
+            <ul class="todo-list"></ul>
         </div>
 
         <script src="./app.js"></script>
