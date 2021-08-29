@@ -4,5 +4,9 @@
 
 .todo-item-container {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+}
+
+.todo-delete-btn {
+    margin-left: 1em;
 }

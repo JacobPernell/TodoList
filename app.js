@@ -19,8 +19,14 @@
         todoDeleteBtn.innerText = 'X';
         todoDeleteBtn.addEventListener('click', deleteTodoItem);
 
+        const todoEditBtn = document.createElement('button');
+        todoEditBtn.classList.add('todo-edit-btn');
+        todoEditBtn.innerText = 'Edit';
+        todoEditBtn.addEventListener('click', editTodoItem);
+
         newTodoDiv.appendChild(newTodo);
         newTodoDiv.appendChild(todoDeleteBtn);
+        newTodoDiv.appendChild(todoEditBtn);
         todoList.appendChild(newTodoDiv);
 
         textInput.value = '';
@@ -29,6 +35,16 @@
 
     function deleteTodoItem(e) {
         todoList.removeChild(e.target.parentElement);
+    }
+
+    function editTodoItem(e) {
+        let selectedItem = e.target.previousSibling.previousSibling;
+
+        const editedText = prompt(
+            `Edit text from ${selectedItem.innerText} to:`,
+            selectedItem.innerText
+        );
+        selectedItem.innerText = editedText;
     }
 
     form.addEventListener('submit', addTodoItem);
